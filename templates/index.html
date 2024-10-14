@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+   <body class="home-page">
+    <div class="header">
+        <a href="/">
+            <img src="https://i.ibb.co/F4Lm1LB/1000391944-removebg-preview.png" alt="Logo" class="logo-center">
+        </a>
+        <a href="/upload" class="upload-link">Enviar URL</a>
+    </div>
+    <div class="container">
+        <form action="/search" method="GET" class="search-form" id="searchForm">
+            <input type="text" name="query" id="searchInput" placeholder="404 Search" required>
+            <button type="submit">></button>
+        </form>
+        <div class="links-container">
+            <a href="https://t.me/+q0Zx6CKRcpBmN2Ix" target="_blank">Telegram</a> | 
+            <a href="https://discord.gg/p8fXddwjEB" target="_blank">Discord</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            const query = document.getElementById('searchInput').value.trim();
+            const alertMessage = document.getElementById('alertMessage');
+            if (query === "") {
+                event.preventDefault();
+                alertMessage.style.display = 'block';
+                setTimeout(function() { alertMessage.style.display = 'none'; }, 1500);
+            } else {
+                alertMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

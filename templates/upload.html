@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Upload</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="header">
+        <a href="/">
+            <img src="https://i.ibb.co/F4Lm1LB/1000391944-removebg-preview.png" alt="Logo" class="logo-center">
+        </a>
+        <a href="/" class="upload-link">Voltar</a>
+    </div>
+    <div class="container">
+        <h1>Enviar URL</h1>
+        <form action="/upload" method="POST" class="upload-form">
+            {{ form.hidden_tag() }}
+            
+            <label for="url">URL:</label>
+            {{ form.url(size=32) }}
+            {% for error in form.url.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            
+            <label for="name">Nome:</label>
+            {{ form.name(size=32) }}
+            {% for error in form.name.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            
+            <label for="description">Descrição:</label>
+            {{ form.description(size=32) }}
+            {% for error in form.description.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            
+            <label for="size">Tamanho do arquivo:</label>
+            {{ form.size(size=32, placeholder="500MB ou 2GB (use * para não especificar)") }}
+            {% for error in form.size.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            
+            <label for="link_type">Tipo de link:</label>
+            {{ form.link_type() }}  
+            {% for error in form.link_type.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+            
+            <label for="category">Categoria:</label>
+            {{ form.category() }} 
+            {% for error in form.category.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %} 
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
