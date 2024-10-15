@@ -9,7 +9,7 @@ const client = new Client({
     partials: [Partials.Channel]
 });
 
-const TOKEN = 'MTI5NTUzOTU5NDE0MTUwMzQ4OA.G7Nymn.eD-ZD-p0CtqyPicJiOuJL5wCFo1cnG6kTZMTGw';
+const TOKEN = 'MTI5NTUzOTU5NDE0MTUwMzQ4OA.GYz_3C.ZVVxhrlcS35o7BB0wQfbSfH4ASodCRSa_XtyFk';
 const VERIFICATION_CHANNEL_IDS = ['1295687991276208229', '1295687991276208230', '1295687991276208231']; // IDs dos canais de verificação
 const SENTINELS_ROLE_ID = '';
 const PASSWORD = 'fBNZA2zWRrp';
